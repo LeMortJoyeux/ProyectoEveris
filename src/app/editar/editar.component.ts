@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from '../dto/cliente';
 import { ClienteService } from '../service/cliente.service';
 
@@ -10,30 +10,12 @@ import { ClienteService } from '../service/cliente.service';
 })
 export class EditarComponent implements OnInit {
 
-  cliente: Cliente = new Cliente();
+  cliente = new Cliente();
   id: number;
-  constructor(private http: ClienteService, private ruta: ActivatedRoute) { }
+
+  constructor(private clienteService: ClienteService, private router: Router) { }
 
   ngOnInit(): void {
-    this.ruta.queryParams .subscribe(data =>{
-      this.id = data.id;
-      this.http.getIdClient(this.id).subscribe(
-        (resp) => {
-          this.cliente = resp;
-        }, (error) => {
-          console.log(error);
-        }
-      )
-    })
-  }
-  guardarPersona() {
-    this.http.guardar(this.cliente).subscribe(
-      (resp) => {
-        alert('Guardado')
-      }, (error) => {
-        console.log(error);
-      }
-    );
   }
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from '../dto/cliente';
 import { ClienteService } from '../service/cliente.service';
 
@@ -17,7 +17,6 @@ export class AgregarComponent implements OnInit {
 
   ngOnInit(): void {
     
-
   }
   guardarPersona() {
     this.clienteService.guardar(this.cliente).subscribe(
@@ -28,5 +27,6 @@ export class AgregarComponent implements OnInit {
       }
     );
   }
+  
 
 }

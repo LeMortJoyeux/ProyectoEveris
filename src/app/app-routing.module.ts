@@ -14,9 +14,9 @@ const routes: Routes = [
   { path: '', component: LogInComponent},
   { path: 'verPersona', component: AllComponent },
   { path: 'agregar', component: AgregarComponent },
-  { path: 'editar', component: EditarComponent },
   { path: 'menu1', component: MenuComponent},
-  { path: 'inicio', component:InicioComponent}
+  { path: 'inicio', component:InicioComponent},
+  { path: 'editar', component:EditarComponent}
 ];
 
 @NgModule({
