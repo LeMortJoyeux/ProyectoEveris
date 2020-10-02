@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Cliente } from '../dto/cliente';
+import { ClienteService } from '../service/cliente.service';
 
 @Component({
   selector: 'app-editar',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarComponent implements OnInit {
 
-  constructor() { }
+  cliente = new Cliente();
+  id: number;
+
+  constructor(private clienteService: ClienteService, private router: Router) { }
 
   ngOnInit(): void {
   }
+
 
 }

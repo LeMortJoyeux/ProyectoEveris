@@ -1,40 +1,36 @@
 <div class="login-form">
-    <form (ngSubmit)="onSubmit(clientForm)" #clientForm="ngForm" novalidate="">
+    <form>
 
         <div class="form-group">
             <label>Nombre</label>
-            <input type="text" class="form-control-range" name="nombre" ngModel placeholder="Ingrese Nombre">
+            <input type="text" class="form-control-range" name="nombre" placeholder="Ingrese Nombre" [(ngModel)] = "cliente.nombre">
         </div>
 
         <div class="form-group">
             <label>Apellido</label>
-            <input type="text" class="form-control-range" name="apellido" ngModel placeholder="Ingrese Apellido">
+            <input type="text" class="form-control-range" name="apellido" placeholder="Ingrese Apellido" [(ngModel)] = "cliente.apellido">
         </div>
         <div class="form-group">
             <label>Rut</label>
-            <input type="text" class="form-control-range" name="rut" ngModel placeholder="Rut">
+            <input type="text" class="form-control-range" name="rut" placeholder="Rut" [(ngModel)] = "cliente.rut">
         </div>
         <div class="form-group">
             <label>Descripcion</label>
-            <input type="text" class="form-control-range" name="descripcion" ngModel placeholder="Descripcion">
+            <input type="text" class="form-control-range" name="descripcion" placeholder="Descripcion" [(ngModel)] = "cliente.descripcion">
         </div>
         <div class="form-group">
             <label>Valor</label>
-            <input type="text" class="form-control-range" name="valor" ngModel placeholder="Valor">
+            <input type="text" class="form-control-range" name="valor" placeholder="Valor" [(ngModel)] = "cliente.valor">
         </div>
         <label>Situacion Deuda</label>
         <div>
-            <!-- <select class="form-control-range">
-                    <option value="Moroso">Pago Atraso</option>
-                    <option value="Al Dia">Al Dia</option>
-                </select> -->
-            <input type="text" class="form-control-range" name="situacion" ngModel placeholder="situacion">
+            <input type="text" class="form-control-range" name="situacion" placeholder="situacion" [(ngModel)] = "cliente.situacion">
         </div>
         <div>
 
         </div>
         <div>
-            <input type="submit" value="Agregar" class="btn btn-primary btn-sm btn-block">
+            <input type="submit" value="Agregar" class="btn btn-primary btn-sm btn-block" (click) = "guardarPersona()" routerLink='/verPersona'>
             <!-- <button type="button" class="btn btn-primary btn-sm btn-block" routerLink='/verPersona'>Agregar</button> -->
         </div>
     </form>

@@ -16,7 +16,8 @@ const routes: Routes = [
   { path: 'agregar', component: AgregarComponent },
   { path: 'editar/:id', component: EditarComponent },
   { path: 'menu1', component: MenuComponent},
-  { path: 'inicio', component:InicioComponent}
+  { path: 'inicio', component:InicioComponent},
+  { path: 'editar', component:EditarComponent}
 ];
 
 @NgModule({
