@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', component: LogInComponent},
   { path: 'verPersona', component: AllComponent },
   { path: 'agregar', component: AgregarComponent },
-  { path: 'editar', component: EditarComponent },
+  { path: 'editar/:id', component: EditarComponent },
   { path: 'menu1', component: MenuComponent},
   { path: 'inicio', component:InicioComponent}
 ];

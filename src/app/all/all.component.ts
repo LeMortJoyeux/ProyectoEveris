@@ -18,6 +18,10 @@ export class AllComponent implements OnInit {
 
       })
   }
+  editarCliente(id){
+  console.log(id);
+
+  }
 
   }
 
