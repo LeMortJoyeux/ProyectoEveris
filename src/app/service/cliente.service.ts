@@ -10,9 +10,12 @@ export class ClienteService {
 
   constructor(private http: HttpClient) { }
 
+
+
   Url = 'http://localhost:8080/';
 
-  guardar(cliente: Cliente): Observable<any>{//se llama el objeto persona al metodo del servicio
+  guardar(cliente: Cliente): Observable<any>{
+
     console.log(cliente.nombre)
     return this.http.post('http://localhost:8080/save', cliente);
   }
@@ -22,5 +25,5 @@ export class ClienteService {
   getIdClient(id:number): Observable<any>{
     return this.http.get(this.Url + id);
   }
-  
+
 }

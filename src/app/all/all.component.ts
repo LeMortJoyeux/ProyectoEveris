@@ -19,9 +19,9 @@ export class AllComponent implements OnInit {
 
       })
   }
-  Editar(cliente: Cliente):void{
-    localStorage.setItem("id",cliente.id.toString());
-    this.router.navigate(["edit"]);
+
+  editarCliente(id){
+  console.log(id);
 
 
   }

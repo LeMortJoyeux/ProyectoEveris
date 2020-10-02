@@ -19,14 +19,15 @@
                 <th scope="col">Eliminar</th>
             </tr>
         </thead>
-        <tr *ngFor="let client of listclient">
+        <tr *ngFor="let client of listclient" (click)="editarCliente(client.id)">
+            <th scope="row">{{client.id}}</th>
             <td>{{client.nombre}}</td>
             <td>{{client.apellido}}</td>
             <td>{{client.rut}}</td>
             <td>{{client.descripcion}}</td>
             <td>{{client.valor}}</td>
             <td>{{client.situacion}}</td>
-            <td><button class="btn btn-success btn-sm btn-block" [routerLink]="'/editar'">Editar</button></td>
+            <td><button class="btn btn-success btn-sm btn-block">Editar</button></td>
             <td><button class="btn btn-danger btn-sm btn-block" [routerLink]="'/verPersona'">Eliminar</button></td>
         </tr>
     </table>
