@@ -16,10 +16,7 @@ export class AgregarComponent implements OnInit {
   constructor(private clienteService: ClienteService, private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
-    /*this.ruta.queryParams.subscribe(
-      params =>{ this.id = params.id;
-      this.clienteService.getOne(this.id)}
-    )*/
+    
 
   }
   guardarPersona() {

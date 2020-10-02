@@ -17,4 +17,8 @@ export class ClienteService {
   getAll(): Observable<any>{
     return this.http.get('http://localhost:8080/all');
   }
+  getIdClient(id:number): Observable<any>{
+    return this.http.get(`http://localhost:8000/find/${id}`);
+  }
+
 }
