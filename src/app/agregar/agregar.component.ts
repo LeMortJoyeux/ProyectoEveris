@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Cliente } from '../dto/cliente';
 import { ClienteService } from '../service/cliente.service';
 
-import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-agregar',
@@ -12,23 +12,24 @@ import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 export class AgregarComponent implements OnInit {
 
   cliente = new Cliente();
-  constructor(private clienteService: ClienteService) { }
+  id: number;
+  constructor(private clienteService: ClienteService, private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
-
-
+    /*this.ruta.queryParams.subscribe(
+      params =>{ this.id = params.id;
+      this.clienteService.getOne(this.id)}
+    )*/
 
   }
-
-  onSubmit(form: NgForm){
-    this.cliente = form.value;
-
-    console.log("Cliente a guardar " + this.cliente)
-    this.clienteService.guardar(this.cliente);
-  
-    }
-
-
-
+  guardarPersona() {
+    this.clienteService.guardar(this.cliente).subscribe(
+      (resp) => {
+        alert('Guardado')
+      }, (error) => {
+        console.log(error);
+      }
+    );
+  }
 
 }

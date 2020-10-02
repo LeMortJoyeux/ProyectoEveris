@@ -12,9 +12,9 @@ export class ClienteService {
 
   guardar(cliente: Cliente): Observable<any>{//se llama el objeto persona al metodo del servicio
     console.log(cliente.nombre)
-    return this.http.post('http://localhost:8081/save', cliente);
+    return this.http.post('http://localhost:8080/save', cliente);
   }
   getAll(): Observable<any>{
-    return this.http.get('http://localhost:8081/all');
+    return this.http.get('http://localhost:8080/all');
   }
 }
