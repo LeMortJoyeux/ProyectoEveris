@@ -9,7 +9,9 @@ import { AgregarComponent } from './agregar/agregar.component';
 import { EditarComponent } from './editar/editar.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { InicioComponent } from './inicio/inicio.component';
-
+import { ClienteService } from './service/cliente.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { InicioComponent } from './inicio/inicio.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

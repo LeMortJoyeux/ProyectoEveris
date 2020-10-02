@@ -17,8 +17,6 @@ const routes: Routes = [
   { path: 'editar', component: EditarComponent },
   { path: 'menu1', component: MenuComponent},
   { path: 'inicio', component:InicioComponent}
-  
-
 ];
 
 @NgModule({

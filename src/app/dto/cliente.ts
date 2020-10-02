@@ -2,10 +2,10 @@ export class Cliente{
     public id: number;
     public nombre: string;
     public apellido: string;
-    public rut: number;
+    public rut: string;
     public descripcion: string;
     public valor: number;
-    public situacion: boolean;
+    public situacion: string;
 }
 
 export class LoginObject{

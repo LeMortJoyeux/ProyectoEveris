@@ -8,12 +8,16 @@ import { ClienteService } from '../service/cliente.service';
   styleUrls: ['./all.component.scss']
 })
 export class AllComponent implements OnInit {
+  listclient: any[];
+  constructor(private clienteService: ClienteService){  }
 
-  
+  ngOnInit()  {
+    this.clienteService.getAll().subscribe(
+      (resp) => {
+        this.listclient = resp;
 
-  constructor() { }
-
-  ngOnInit(): void {}
+      })
+  }
 
   }
 
